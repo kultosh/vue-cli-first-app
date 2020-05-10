@@ -1,9 +1,7 @@
 <template>
   <div>
-    <h1>{{title}}</h1>
-    <p>
-      {{greeting()}}
-    </p>
+    <h1>{{title}}:</h1>
+    <hero></hero>
   </div>
 </template>
 
@@ -11,12 +9,7 @@
 export default {
   data () {
     return{
-        title: 'Vue-CLI',
-    }
-  },
-  methods: {
-    greeting:function(){
-      return "Namaste";
+        title: 'Nesting Compnent Globally',
     }
   }
 }
