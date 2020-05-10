@@ -1,27 +1,28 @@
 <template>
   <div>
-    <h1>{{title}}:</h1>
-    <hero></hero>
+    <app-header></app-header>
+    <heroes></heroes>
+    <app-footer></app-footer>
   </div>
 </template>
 
 <script>
-import Hero from './Hero.vue'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+import Heroes from './components/Heroes.vue'
 
 export default {
   components: {
-    'hero': Hero
+    'app-header': Header,
+    'app-footer': Footer,
+    'heroes': Heroes
   },
   data () {
-    return{
-        title: 'Nesting Compnent Globally',
-    }
+
   }
 }
 </script>
 
 <style scoped>
-  h1{
-      color: purple;
-  }
+
 </style>
