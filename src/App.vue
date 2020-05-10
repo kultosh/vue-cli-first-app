@@ -6,7 +6,12 @@
 </template>
 
 <script>
+import Hero from './Hero.vue'
+
 export default {
+  components: {
+    'hero': Hero
+  },
   data () {
     return{
         title: 'Nesting Compnent Globally',
