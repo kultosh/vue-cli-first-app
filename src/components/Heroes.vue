@@ -11,9 +11,16 @@
 
 <script>
   export default{
-    props: ["heroes"],
+    props: {
+      heroes: {
+        type: Array,
+        required: true
+      }
+    },
     data(){
+      return {
 
+      }
     }
   }
 </script>
