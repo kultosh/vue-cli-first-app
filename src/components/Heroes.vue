@@ -11,15 +11,9 @@
 
 <script>
   export default{
+    props: ["heroes"],
     data(){
-      return {
-        heroes: [
-          {role:'Captain America', name:'Chris Evan', show:false},
-          {role:'Iron Man', name:'Robert Downy Jr', show:false},
-          {role:'Thor', name:'Chris Hamesworth', show:false},
-          {role:'Spider Man', name:'Tom Holland', show:false},
-        ]
-      }
+
     }
   }
 </script>
