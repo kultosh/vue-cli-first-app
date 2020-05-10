@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <h2>{{name}}</h2>
+    <h1>{{name}}</h1>
     <li v-for="hero in characters">{{hero}}</li>
   </ul>
 </template>
@@ -15,3 +15,9 @@
     }
   }
 </script>
+
+<style>
+  h1{
+    color: blue;
+  }
+</style>
