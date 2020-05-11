@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1 v-on:click="changeTitle">{{title}}</h1>
+    <h1 v-on:click="changeDynamicTitle">{{title}}</h1>
   </header>
 </template>
 
@@ -17,8 +17,8 @@
       }
     },
     methods: {
-      changeTitle:function(){
-        return this.title = "Marvel Heroes"
+      changeDynamicTitle:function(){
+        this.$emit('changeTitle','Marvel Movie is Awesome!');
       }
     }
   }
