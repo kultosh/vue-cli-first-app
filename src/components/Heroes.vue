@@ -6,6 +6,7 @@
         <h3 v-show="hero.show">{{hero.name}}</h3>
       </li>
     </ul>
+    <button type="button" name="button" v-on:click="deleteHeroes">Delete</button>
   </div>
 </template>
 
@@ -20,6 +21,11 @@
     data(){
       return {
 
+      }
+    },
+    methods: {
+      deleteHeroes:function(){
+        this.heroes.pop();
       }
     }
   }
