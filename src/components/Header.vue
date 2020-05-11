@@ -5,6 +5,8 @@
 </template>
 
 <script>
+  import {bus} from '../main';
+
   export default{
     props: {
       title:{
@@ -18,7 +20,9 @@
     },
     methods: {
       changeDynamicTitle:function(){
-        this.$emit('changeTitle','Marvel Movie is Awesome!');
+        this.title = 'Super Hero';
+        // bus.$emit('titleChange','This is Change in Marvel!');
+        bus.$emit('titleChange', this.title);
       }
     }
   }
