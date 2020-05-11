@@ -1,8 +1,16 @@
 <template>
   <div>
     <form-helper>
-      <h1 slot="title">Slot Title</h1>
-      <p slot="paragraph">This is the paragraph for slot.</p>
+      <div slot="form-header">
+          <h3>Title Here</h3>
+      </div>
+      <div slot="form-fields">
+          <input type="text" name="name" value="" placeholder="name">
+          <input type="password" name="password" value="" placeholder="password">
+      </div>
+      <div slot="form-controls">
+          <button @click="handleSubmit">Submit</button>
+      </div>
     </form-helper>
   </div>
 </template>
