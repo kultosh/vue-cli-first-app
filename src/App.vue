@@ -1,8 +1,8 @@
 <template>
   <div>
-    <app-header></app-header>
+    <app-header v-bind:title="title"></app-header>
     <app-heroes v-bind:heroes="heroes"></app-heroes>
-    <app-footer></app-footer>
+    <app-footer v-bind:title="title"></app-footer>
   </div>
 </template>
 
@@ -24,7 +24,8 @@ export default {
         {role:'Iron Man', name:'Robert Downy Jr', show:false},
         {role:'Thor', name:'Chris Hamesworth', show:false},
         {role:'Spider Man', name:'Tom Holland', show:false},
-      ]
+      ],
+      title: "Avenger"
     }
   }
 }
