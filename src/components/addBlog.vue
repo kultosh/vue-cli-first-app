@@ -1,10 +1,10 @@
 <template>
   <div id="add-blog">
-    <h2>Add a New Blog Post</h2>
+    <h2>Add a New Movie Post</h2>
     <form>
-      <label for="">Blog Title:</label>
+      <label for="">Movie Title:</label>
       <input type="text" name="" v-model.lazy="blog.title">
-      <label for="">Blog Content:</label>
+      <label for="">Movie Content:</label>
       <textarea name="name" rows="8" cols="80" v-model.lazy="blog.content"></textarea>
       <div id="checkboxes">
         <label for="">Marvel</label>
@@ -14,16 +14,21 @@
         <label for="">Disney</label>
         <input type="checkbox" name="" value="disney" v-model="blog.categories">
       </div>
+      <label for="">Character:</label>
+      <select v-model="blog.characters">
+        <option v-for="character in characters">{{character}}</option>
+      </select>
     </form>
     <div id="preview">
-      <h3>Preview Blog</h3>
-      <p>Blog Title:{{blog.title}}</p>
-      <p>Blog Content:</p>
+      <h3>Preview Movie</h3>
+      <p>Movie Title:{{blog.title}}</p>
+      <p>Movie Content:</p>
       <p>{{blog.content}}</p>
-      <p>Blog Categories:</p>
+      <p>Movie Categories:</p>
       <ul>
         <li v-for="category in blog.categories">{{category}}</li>
       </ul>
+      <p>Characters:{{blog.characters}}</p>
     </div>
   </div>
 </template>
@@ -35,8 +40,10 @@ export default {
       blog: {
         title: '',
         content:'',
-        categories: []
-      }
+        categories: [],
+        characters: ''
+      },
+      characters: ['Captain America','Super Man', 'X-Men']
     }
   }
 }
