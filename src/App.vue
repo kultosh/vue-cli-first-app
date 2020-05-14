@@ -1,23 +1,23 @@
 <template>
   <div>
-    <add-blog></add-blog>
+    <show-blogs></show-blogs>
   </div>
 </template>
 
 <script>
 import addBlog from './components/addBlog.vue';
+import showBlog from './components/showBlogs.vue';
+
 export default {
   components: {
-    'add-blog': addBlog
+    'add-blog': addBlog,
+    'show-blogs': showBlog
   },
   data () {
     return{
       posts: ''
     }
   },
-  mounted:function(){
-    axios.get('https://jsonplaceholder.typicode.com/posts').then(response => this.posts = response.data);
-  }
 }
 </script>
 

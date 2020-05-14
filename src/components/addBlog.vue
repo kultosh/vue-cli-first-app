@@ -51,29 +51,6 @@ export default {
       submitted: false,
     }
   },
-  // mounted:function(){
-  //
-  //     axios.post('http://jsonplaceholder.typicode.com/posts',{
-  //       title: this.blog.title,
-  //       body: this.blog.content,
-  //       userId: 1
-  //     }).then(data=>{
-  //       console.log(data);
-  //       this.submitted = true;
-  //     })
-  // }
-  // methods:{
-  //   post:function(){
-  //     axios.post('http://jsonplaceholder.typicode.com/posts',{
-  //       title: this.blog.title,
-  //       body: this.blog.content,
-  //       userId: 1
-  //     }).then(response=>{
-  //       console.log(response.data);
-  //       this.submitted = true;
-  //     })
-  //   }
-  // }
   methods:{
     post:function(){
       axios.post('http://jsonplaceholder.typicode.com/posts',{
