@@ -1,7 +1,7 @@
 <template>
   <div id="add-blog">
     <h2>Add a New Movie Post</h2>
-    <form>
+    <form v-if="!submitted">
       <label for="">Movie Title:</label>
       <input type="text" name="" v-model.lazy="blog.title">
       <label for="">Movie Content:</label>
@@ -18,7 +18,11 @@
       <select v-model="blog.characters">
         <option v-for="character in characters">{{character}}</option>
       </select>
+      <button type="button" v-on:click.prevent="post">Add Blog</button>
     </form>
+    <div v-if="submitted">
+      <h3>Thanks for adding your post!</h3>
+    </div>
     <div id="preview">
       <h3>Preview Movie</h3>
       <p>Movie Title:{{blog.title}}</p>
@@ -43,9 +47,46 @@ export default {
         categories: [],
         characters: ''
       },
-      characters: ['Captain America','Super Man', 'X-Men']
+      characters: ['Captain America','Super Man', 'X-Men'],
+      submitted: false,
+    }
+  },
+  // mounted:function(){
+  //
+  //     axios.post('http://jsonplaceholder.typicode.com/posts',{
+  //       title: this.blog.title,
+  //       body: this.blog.content,
+  //       userId: 1
+  //     }).then(data=>{
+  //       console.log(data);
+  //       this.submitted = true;
+  //     })
+  // }
+  // methods:{
+  //   post:function(){
+  //     axios.post('http://jsonplaceholder.typicode.com/posts',{
+  //       title: this.blog.title,
+  //       body: this.blog.content,
+  //       userId: 1
+  //     }).then(response=>{
+  //       console.log(response.data);
+  //       this.submitted = true;
+  //     })
+  //   }
+  // }
+  methods:{
+    post:function(){
+      axios.post('http://jsonplaceholder.typicode.com/posts',{
+        title: this.blog.title,
+        body: this.blog.content,
+        userId: 1
+      }).then(data=>{
+        console.log(data);
+        this.submitted = true;
+      })
     }
   }
+
 }
 </script>
 

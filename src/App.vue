@@ -12,8 +12,11 @@ export default {
   },
   data () {
     return{
-
+      posts: ''
     }
+  },
+  mounted:function(){
+    axios.get('https://jsonplaceholder.typicode.com/posts').then(response => this.posts = response.data);
   }
 }
 </script>
