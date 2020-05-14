@@ -1,8 +1,8 @@
 <template>
-  <div id="show-blogs">
+  <div v-theme="'narrow'" id="show-blogs">
     <h1>All Blog Articles</h1>
     <div class="single-blog" v-for="blog in blogs">
-      <h3>{{blog.title}}</h3>
+      <h3 v-rainbow>{{blog.title}}</h3>
       <article>{{blog.body}}</article>
     </div>
   </div>
@@ -12,7 +12,7 @@ export default {
   name: "",
   data(){
     return {
-      blogs: []
+      blogs: [],
     }
   },
   created() {
