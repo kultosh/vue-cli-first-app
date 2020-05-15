@@ -10,7 +10,9 @@
 <script>
 export default {
   data(){
+    return {
 
+    }
   }
 }
 </script>
@@ -35,10 +37,6 @@ export default {
     padding: 14px 0;
     margin-bottom: 40px;
   }
-  /* .router-link-exact-active{
-    background: #eee;
-    color: #444;
-  } */
   .router-link-active{
     background: #eee;
     color: #444;

@@ -3,7 +3,7 @@
     <h1>All Blog Articles</h1>
     <input type="text" name="" value="" v-model="search" placeholder="search blogs">
     <div class="single-blog" v-for="blog in filteredBlogs">
-      <h3 v-rainbow>{{blog.title | to-uppercase}}</h3>
+      <router-link v-bind:to="'/blog/'+blog.id"><h3 v-rainbow>{{blog.title | to-uppercase}}</h3></router-link>
       <article>{{blog.body | snippet}}</article>
     </div>
   </div>
@@ -20,15 +20,10 @@ export default {
   },
   created() {
     axios.get('https://jsonplaceholder.typicode.com/posts').then(response => {
-      // console.log(response.data);
       this.blogs = response.data.slice(0,10);
     })
   },
   filters: {
-    // 'to-uppercase':function(value){
-    //   return value.toUpperCase();
-    // }
-    //Can be use as:
     toUppercase(value) {
       return value.toUpperCase();
     },
