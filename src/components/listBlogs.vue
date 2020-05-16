@@ -19,7 +19,7 @@ export default {
   },
   created() {
     axios.get('https://jsonplaceholder.typicode.com/posts').then(response => {
-      // console.log(response.data);
+      console.log(response.data);
       this.blogs = response.data.slice(0,10);
     })
   },
